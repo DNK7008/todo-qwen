@@ -388,6 +388,14 @@ def main():
     
     # Run the bot
     print("Bot is starting...")
+    # For Python 3.14+ compatibility, we need to handle the event loop explicitly
+    import asyncio
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+    
     application.run_polling(allowed_updates=Update.ALL_TYPES)
 
 if __name__ == '__main__':
