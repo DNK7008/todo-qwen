@@ -8,10 +8,10 @@ from datetime import datetime
 SELECT_USER, CREATE_TASK_TITLE, CREATE_TASK_DESCRIPTION, SET_PRIORITY = range(4)
 
 # Bot token - replace with your actual token
-BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8644348317:AAHhc-wLShYOs9gn4HQ-3awk2b1dZasOXkQ"
 
 # Admin user IDs who can set roles (add your Telegram ID here)
-ADMIN_IDS = []
+ADMIN_IDS = [734548409]
 
 def get_user_by_telegram_id(db: Session, telegram_id: str) -> User:
     return db.query(User).filter(User.telegram_id == telegram_id).first()
